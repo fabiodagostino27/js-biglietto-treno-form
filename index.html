@@ -27,7 +27,17 @@
                         <input type="number" class="form-control" id="km" required></div>
                     <div class="col-6">
                         <label for="select" class="form-label">Fascia d'età</label>
-                        <select class="form-select " id="select"></select>
+                        <select class="form-select " id="select" required>
+                            <option value="" disabled selected>Scegli una delle seguenti opzioni</option>
+                            <option value="minor">Minorenne</option>
+                            <option value="adult">Maggiorenne</option>
+                            <option value="over65">Over 65</option>
+                        </select>
+                    </div>
+
+                    <div class="text-center my-3">                        
+                        <button id="confirm" class="btn btn-primary col-2 me-1">Conferma</button>
+                        <button id="cancel" class="btn btn-outline-secondary col-2 ms-1">Annulla</button>
                     </div>
                 </div>
             </form>
