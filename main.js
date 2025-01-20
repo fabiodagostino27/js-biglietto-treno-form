@@ -12,8 +12,6 @@ let cardAge = document.getElementById("cardAge");
 let cardDiscount = document.getElementById("cardDiscount");
 let cardPrice = document.getElementById("cardPrice");
 
-let required = document.querySelectorAll(":required");
-
 function price(x, y) {
     const pricePerKm = 0.21;
 
@@ -32,7 +30,7 @@ submit.addEventListener('click', (event) => {
         alert("Errore. Compila il form nel modo corretto.")
     } else {
             cardName.innerHTML = `${name.value} ${surname.value}`;
-            cardKm.innerHTML = km.value;
+            cardKm.innerHTML = `${km.value}km`
         
             if (age.value == "minor") {
                 cardAge.innerHTML = "Minorenne";
