@@ -4,7 +4,13 @@ let km = document.getElementById("km");
 let age = document.getElementById("select");
 let submit = document.getElementById("submit");
 let cancel = document.getElementById("cancel");
-let ticket = document.getElementById("ticket")
+
+let ticket = document.getElementById("ticket");
+let cardName = document.getElementById("cardName");
+let cardKm = document.getElementById("cardKm");
+let cardAge = document.getElementById("cardAge");
+let cardDiscount = document.getElementById("cardDiscount");
+let cardPrice = document.getElementById("cardPrice");
 
 
 function price(x, y) {
@@ -19,6 +25,19 @@ function price(x, y) {
 
 submit.addEventListener('click', (event) => {
     event.preventDefault();
-    
+    cardName.innerHTML = `${name.value} ${surname.value}`;
+    cardKm.innerHTML = km.value;
 
+    if (age.value == "minor") {
+        cardAge.innerHTML = "Minorenne";
+        cardDiscount.innerHTML = "20%"
+    } else if (age.value == "over65") {
+        cardAge.innerHTML = "Over 65";
+        cardDiscount.innerHTML = "40%"
+    } else {
+        cardAge.innerHTML = "Maggiorenne";
+        cardDiscount.innerHTML = 0
+    }
+
+    cardPrice.innerHTML = `${price(km, age)}€`
 })
